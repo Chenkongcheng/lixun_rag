@@ -38,6 +38,7 @@ python server/main.py
 
 ### 核心框架
 - **LangChain**: RAG流程编排框架
+- **LangGraph**: 智能体框架
 - **Chroma**: 向量数据库存储文档嵌入
 - **阿里通义千问**: 大语言模型提供问答能力
 
