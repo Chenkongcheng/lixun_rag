@@ -1,0 +1,23 @@
+[project]
+name = "lixun-rag"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "beautifulsoup4==4.12.3",
+    "python-dotenv==1.0.1",
+    "openai==1.99.9",
+    "langchain-chroma==0.2.5",
+    "tqdm==4.66.2",
+    "python-docx==1.1.0",
+    "Pillow==10.2.0",
+    "numpy==2.2.6",
+    "langchain-community==0.3.27",
+    "opencv-python==4.10.0.84",
+    "PyMuPDF==1.24.5",
+    "wired-table-rec==0.0.3",
+    "langgraph==0.4.8",
+    "pydantic==2.11.9",
+    "langchain-core==0.3.74",
+]
