@@ -12,7 +12,7 @@
 ### 快速启动
 ```bash
 # 1. 克隆项目
-git clone <项目地址>
+git clone https://github.com/Chenkongcheng/lixun_rag.git
 cd RAG_lixun
 
 # 2. 配置API密钥
