@@ -19,7 +19,14 @@ cd RAG_lixun
 cp .env.example .env
 # 编辑.env文件，填写DASHSCOPE_API_KEY
 
-# 3. 一键启动
+# 3.配置要解析的文档路径：在server/main.py下配置文档路径，支持多个文档同时解析
+INITIAL_FILES = [
+        "E:/requirements.txt",
+        "D:/TEST.pdf",
+        ....
+    ]
+
+# 4. 一键启动
 ./scripts/start.sh        # Linux/Mac
 scripts\start.bat         # Windows
 ```
