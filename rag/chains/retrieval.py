@@ -2,7 +2,7 @@
 from typing import List, Optional, Any
 from langchain_core.documents import Document
 from rag.chains.base import BaseRetrievalChain
-from rag.connector.vectorstore.ChromaStore import ChromaVectorStore
+from rag.connector.vectorstore.chroma_store import ChromaVectorStore
 
 
 class BasicRetrievalChain(BaseRetrievalChain):

@@ -3,13 +3,14 @@ from langchain_core.documents import Document
 from .base_loader import BaseLoader
 import os
 
-# 动态导入所有加载器
 from .pdf_loader import CustomizedOcrPdfLoader
 from .doc_loader import CustomizedOcrDocLoader
 from .md_loader import CustomizedMdLoader
 from .txt_loader import CustomizedTxtLoader
 from .web_loader import CustomizedWebLoader
 
+import logging
+logger = logging.getLogger(__name__)
 
 class LoaderManager:
     """加载器管理器，根据文件类型自动选择合适的加载器"""
@@ -95,7 +96,7 @@ class LoaderManager:
                 docs = self.load(path)
                 all_docs.extend(docs)
             except Exception as e:
-                print(f"加载文件 {path} 失败: {str(e)}")
+                logger.error(f"加载文件 {path} 失败: {str(e)}")
         return all_docs
 
     def lazy_load(self, file_path: str) -> Iterator[Document]:

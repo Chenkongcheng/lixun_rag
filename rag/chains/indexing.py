@@ -12,7 +12,7 @@ import bs4
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
 from rag.chains.base import BaseIndexingChain
-from rag.connector.vectorstore.ChromaStore import ChromaVectorStore
+from rag.connector.vectorstore.chroma_store import ChromaVectorStore
 from rag.module.loader.loader_manager import loader_manager
 
 # 配置日志

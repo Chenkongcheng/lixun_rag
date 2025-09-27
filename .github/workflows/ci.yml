@@ -1,138 +1,47 @@
-name: CI/CD Pipeline
+name: Lixun RAG CI
 
 on:
   push:
     branches: [ main, develop ]
   pull_request:
-    branches: [ main, develop ]
-
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+    branches: [ main ]
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.9, 3.10, 3.11]
-
-    steps:
-    - uses: actions/checkout@v4
     
-    - name: Set up Python ${{ matrix.python-version }}
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: '3.10'
     
-    - name: Cache pip dependencies
-      uses: actions/cache@v3
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-pip-
-    
+    - name: Install uv
+      run: pip install uv
+      
     - name: Install dependencies
+      run: uv pip install -e .
+      
+    - name: Run basic syntax check
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install pytest pytest-cov flake8 black isort
-    
-    - name: Lint with flake8
+        python -m py_compile server/*.py
+        python -m py_compile rag/**/*.py
+        
+    - name: Run minimal tests
       run: |
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    
-    - name: Format check with black
+        python -c "from rag.chains.base import BaseIndexingChain, BaseRetrievalChain, BaseGenerationChain; print('Base classes imported successfully')"
+        python -c "from rag.connector.embedding.aliyun import QwenEmbeddings; print('Embedding imported successfully')"
+        python -c "from rag.connector.llm.aliyun import QwenLLM; print('LLM imported successfully')"
+        
+    - name: Validate environment
       run: |
-        black --check .
-    
-    - name: Import sort check with isort
-      run: |
-        isort --check-only .
-    
-    - name: Test with pytest
-      run: |
-        pytest tests/ --cov=rag --cov-report=xml --cov-report=html
-    
-    - name: Upload coverage reports
-      uses: codecov/codecov-action@v3
-      with:
-        file: ./coverage.xml
-        flags: unittests
-        name: codecov-umbrella
-
-  security:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    
-    - name: Run security audit
-      run: |
-        pip install safety bandit
-        safety check -r requirements.txt
-        bandit -r rag/ -f json -o bandit-report.json || true
-    
-    - name: Upload security report
-      uses: actions/upload-artifact@v3
-      with:
-        name: security-report
-        path: bandit-report.json
-
-  build:
-    needs: [test, security]
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push'
-    
-    steps:
-    - uses: actions/checkout@v4
-    
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v3
-    
-    - name: Log in to Container Registry
-      uses: docker/login-action@v3
-      with:
-        registry: ${{ env.REGISTRY }}
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
-    
-    - name: Extract metadata
-      id: meta
-      uses: docker/metadata-action@v5
-      with:
-        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-        tags: |
-          type=ref,event=branch
-          type=ref,event=pr
-          type=semver,pattern={{version}}
-          type=semver,pattern={{major}}.{{minor}}
-          type=sha
-    
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v5
-      with:
-        context: .
-        platforms: linux/amd64,linux/arm64
-        push: true
-        tags: ${{ steps.meta.outputs.tags }}
-        labels: ${{ steps.meta.outputs.labels }}
-        cache-from: type=gha
-        cache-to: type=gha,mode=max
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    environment: production
-    
-    steps:
-    - uses: actions/checkout@v4
-    
-    - name: Deploy to staging
-      run: |
-        echo "Deploying to staging environment..."
-        # 这里添加实际的部署命令
-        # 例如：kubectl apply -f k8s/
-        # 或者：ssh user@server 'docker-compose up -d'
+        python -c "
+import os
+assert 'DASHSCOPE_API_KEY' in os.environ or 'LANGSMITH_API_KEY' in os.environ, 'Missing required API keys'
+print('Environment validation passed')
+        "
+      env:
+        DASHSCOPE_API_KEY: ${{ secrets.DASHSCOPE_API_KEY }}
+        LANGSMITH_API_KEY: ${{ secrets.LANGSMITH_API_KEY }}

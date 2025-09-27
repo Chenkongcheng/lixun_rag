@@ -1,0 +1,593 @@
+2025-09-27 12:20:55,979 - __main__ - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:20:55,980 - __main__ - INFO - LANGSMITH_API_KEY 存在: False
+2025-09-27 12:20:55,980 - __main__ - WARNING - LANGSMITH_API_KEY未设置，LangSmith追踪已禁用
+2025-09-27 12:22:19,753 - __main__ - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:22:19,753 - __main__ - INFO - LANGSMITH_API_KEY 存在: False
+2025-09-27 12:22:19,753 - __main__ - WARNING - LANGSMITH_API_KEY未设置，LangSmith追踪已禁用
+2025-09-27 12:24:46,021 - __main__ - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:24:46,021 - __main__ - INFO - LANGSMITH_API_KEY 存在: False
+2025-09-27 12:24:46,022 - __main__ - WARNING - LANGSMITH_API_KEY未设置，LangSmith追踪已禁用
+2025-09-27 12:25:27,736 - __main__ - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:25:27,737 - __main__ - INFO - LANGSMITH_API_KEY 存在: False
+2025-09-27 12:25:27,737 - __main__ - WARNING - LANGSMITH_API_KEY未设置，LangSmith追踪已禁用
+2025-09-27 12:26:09,240 - __main__ - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:26:09,240 - __main__ - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:26:09,244 - __main__ - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:26:23,519 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 12:26:23,704 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:26:23,706 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:26:23,709 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:26:30,543 - rag_server - INFO - 正在处理您的问题...
+2025-09-27 12:26:30,543 - rag_agent - INFO - 正在执行首次索引：1个文件
+2025-09-27 12:26:30,544 - rag.chains.indexing - INFO - 成功加载1个文档（包含所有类型）
+2025-09-27 12:26:30,544 - rag.chains.indexing - INFO - 文档拆分完成：1个原始文档 → 2个chunk
+2025-09-27 12:26:31,183 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:26:31,387 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:26:31,396 - rag.chains.indexing - INFO - 文档存储完成：2个chunk已存入向量库，集合名称：interactive_rag_collection
+2025-09-27 12:26:31,396 - rag_agent - INFO - 首次索引完成：2个文档片段存入向量库
+2025-09-27 12:26:31,713 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:26:31,752 - rag_agent - INFO - 检索到 2 个相关文档片段
+2025-09-27 12:26:32,331 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:26:32,339 - rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:26:32,340 - rag_server - INFO - 对话完成 - 问题: 你好, 改写: 你好, 文档数: 2
+2025-09-27 12:26:36,775 - rag_server - INFO - 正在处理您的问题...
+2025-09-27 12:26:37,271 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:26:37,273 - rag_agent - INFO - 问题改写：原始='你是谁？' → 改写='你是谁？'
+2025-09-27 12:26:37,477 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:26:37,479 - rag_agent - INFO - 检索到 2 个相关文档片段
+2025-09-27 12:26:38,441 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:26:38,448 - rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:26:38,460 - rag_server - INFO - 对话完成 - 问题: 你是谁？, 改写: 你是谁？, 文档数: 2
+2025-09-27 12:27:39,263 - rag_server - INFO - 正在处理您的问题...
+2025-09-27 12:27:39,766 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:27:39,768 - rag_agent - INFO - 问题改写：原始='推出' → 改写='推出什么？'
+2025-09-27 12:27:39,988 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:27:39,993 - rag_agent - INFO - 检索到 2 个相关文档片段
+2025-09-27 12:27:40,451 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:27:40,453 - rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:27:40,455 - rag_server - INFO - 对话完成 - 问题: 推出, 改写: 推出什么？, 文档数: 2
+2025-09-27 12:27:46,158 - rag_server - INFO - 会话结束，正在清理资源...
+2025-09-27 12:27:46,160 - rag_server - INFO - 资源清理完成，再见！
+2025-09-27 12:28:52,818 - __main__ - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:28:52,818 - __main__ - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:28:52,821 - __main__ - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:35:02,769 - langchain_community.utils.user_agent - WARNING - USER_AGENT environment variable not set, consider setting it to identify your requests.
+2025-09-27 12:35:02,782 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:35:02,782 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:35:02,785 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:35:02,815 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 12:35:02,921 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:35:02,921 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:35:02,923 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:35:02,931 - server.rag_agent - INFO - 正在执行首次索引：1个文件
+2025-09-27 12:35:02,932 - rag.chains.indexing - INFO - 成功加载1个文档（包含所有类型）
+2025-09-27 12:35:02,932 - rag.chains.indexing - INFO - 文档拆分完成：1个原始文档 → 1个chunk
+2025-09-27 12:35:03,544 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:35:03,552 - rag.chains.indexing - INFO - 文档存储完成：1个chunk已存入向量库，集合名称：langsmith_demo
+2025-09-27 12:35:03,554 - server.rag_agent - INFO - 首次索引完成：1个文档片段存入向量库
+2025-09-27 12:35:03,927 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:35:03,973 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:35:04,878 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:35:04,886 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:35:06,095 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:35:06,097 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:35:06,788 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:35:06,795 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:35:07,995 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:35:07,998 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:35:08,896 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:35:08,903 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:43:12,909 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 12:43:13,025 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:43:13,026 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:43:13,028 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:43:13,035 - server.rag_agent - INFO - 正在执行首次索引：3个文件
+2025-09-27 12:43:13,046 - rag.chains.indexing - INFO - 成功加载3个文档（包含所有类型）
+2025-09-27 12:43:13,047 - rag.chains.indexing - INFO - 文档拆分完成：3个原始文档 → 3个chunk
+2025-09-27 12:43:13,646 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:43:13,882 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:43:14,066 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:43:14,188 - rag.chains.indexing - INFO - 文档存储完成：3个chunk已存入向量库，集合名称：consistency_test
+2025-09-27 12:43:14,189 - server.rag_agent - INFO - 首次索引完成：3个文档片段存入向量库
+2025-09-27 12:43:14,778 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:43:14,822 - server.rag_agent - INFO - 检索到 3 个相关文档片段
+2025-09-27 12:43:15,384 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:43:15,393 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:43:15,470 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:43:15,471 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:43:15,472 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:43:15,687 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:43:15,691 - server.rag_agent - INFO - 检索到 3 个相关文档片段
+2025-09-27 12:43:16,486 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:43:16,546 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:43:32,242 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 12:43:32,338 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:43:32,338 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:43:32,340 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:43:32,348 - server.rag_agent - INFO - 正在执行首次索引：3个文件
+2025-09-27 12:43:32,350 - rag.chains.indexing - INFO - 成功加载3个文档（包含所有类型）
+2025-09-27 12:43:32,351 - rag.chains.indexing - INFO - 文档拆分完成：3个原始文档 → 3个chunk
+2025-09-27 12:43:32,868 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:43:33,071 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:43:33,260 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:43:33,329 - rag.chains.indexing - INFO - 文档存储完成：3个chunk已存入向量库，集合名称：consistency_test
+2025-09-27 12:43:33,331 - server.rag_agent - INFO - 首次索引完成：3个文档片段存入向量库
+2025-09-27 12:43:33,658 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:43:33,733 - server.rag_agent - INFO - 检索到 2 个相关文档片段
+2025-09-27 12:43:34,307 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:43:34,320 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:43:34,400 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:43:34,400 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:43:34,403 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:43:34,603 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:43:34,652 - server.rag_agent - INFO - 检索到 2 个相关文档片段
+2025-09-27 12:43:35,394 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:43:35,400 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:44:56,009 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 12:44:56,094 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:44:56,094 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:44:56,096 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:44:56,103 - server.rag_agent - INFO - 正在执行首次索引：3个文件
+2025-09-27 12:44:56,107 - rag.chains.indexing - INFO - 成功加载3个文档（包含所有类型）
+2025-09-27 12:44:56,108 - rag.chains.indexing - INFO - 文档拆分完成：3个原始文档 → 3个chunk
+2025-09-27 12:44:56,644 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:44:56,854 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:44:57,033 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:44:57,092 - rag.chains.indexing - INFO - 文档存储完成：3个chunk已存入向量库，集合名称：consistency_test
+2025-09-27 12:44:57,093 - server.rag_agent - INFO - 首次索引完成：3个文档片段存入向量库
+2025-09-27 12:44:57,397 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:44:57,443 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:44:58,087 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:44:58,100 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:44:58,181 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:44:58,182 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:44:58,183 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:44:58,413 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:44:58,416 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:44:58,897 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:44:58,899 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:46:37,548 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 12:46:37,634 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:46:37,635 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:46:37,637 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:46:37,653 - server.rag_agent - INFO - 正在执行首次索引：3个文件
+2025-09-27 12:46:37,656 - rag.chains.indexing - INFO - 成功加载3个文档（包含所有类型）
+2025-09-27 12:46:37,661 - rag.chains.indexing - INFO - 文档拆分完成：3个原始文档 → 3个chunk
+2025-09-27 12:46:38,243 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:46:38,438 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:46:38,660 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:46:38,760 - rag.chains.indexing - INFO - 文档存储完成：3个chunk已存入向量库，集合名称：consistency_test
+2025-09-27 12:46:38,760 - server.rag_agent - INFO - 首次索引完成：3个文档片段存入向量库
+2025-09-27 12:46:39,064 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:46:39,113 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:46:39,575 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:46:39,582 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:46:39,672 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:46:39,672 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:46:39,673 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:46:39,863 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:46:39,867 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:46:40,438 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:46:40,553 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:47:59,324 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 12:47:59,416 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:47:59,416 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:47:59,418 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:47:59,427 - server.rag_agent - INFO - 正在执行首次索引：3个文件
+2025-09-27 12:47:59,429 - rag.chains.indexing - INFO - 成功加载3个文档（包含所有类型）
+2025-09-27 12:47:59,432 - rag.chains.indexing - INFO - 文档拆分完成：3个原始文档 → 3个chunk
+2025-09-27 12:47:59,972 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:48:00,167 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:48:00,383 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:48:00,465 - rag.chains.indexing - INFO - 文档存储完成：3个chunk已存入向量库，集合名称：consistency_test
+2025-09-27 12:48:00,465 - server.rag_agent - INFO - 首次索引完成：3个文档片段存入向量库
+2025-09-27 12:48:00,767 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:48:00,859 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:48:01,409 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:48:01,418 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:48:01,478 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:48:01,478 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:48:01,479 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:48:01,691 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:48:01,694 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:48:02,310 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:48:02,314 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:50:19,838 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 12:50:19,933 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:50:19,933 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:50:19,936 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:50:19,947 - server.rag_agent - INFO - 正在执行首次索引：3个文件
+2025-09-27 12:50:19,950 - rag.chains.indexing - INFO - 成功加载3个文档（包含所有类型）
+2025-09-27 12:50:19,951 - rag.chains.indexing - INFO - 文档拆分完成：3个原始文档 → 3个chunk
+2025-09-27 12:50:20,528 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:50:20,710 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:50:20,900 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:50:20,961 - rag.chains.indexing - INFO - 文档存储完成：3个chunk已存入向量库，集合名称：consistency_test
+2025-09-27 12:50:20,962 - server.rag_agent - INFO - 首次索引完成：3个文档片段存入向量库
+2025-09-27 12:50:21,263 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:50:21,310 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:50:21,785 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:50:21,794 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:50:21,879 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:50:21,879 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:50:21,880 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:50:22,062 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:50:22,065 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:50:22,554 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:50:22,556 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:51:34,212 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 12:51:34,301 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:51:34,301 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:51:34,304 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:51:34,312 - server.rag_agent - INFO - 正在执行首次索引：3个文件
+2025-09-27 12:51:34,315 - rag.chains.indexing - INFO - 成功加载3个文档（包含所有类型）
+2025-09-27 12:51:34,316 - rag.chains.indexing - INFO - 文档拆分完成：3个原始文档 → 3个chunk
+2025-09-27 12:51:34,847 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:51:35,027 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:51:35,219 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:51:35,290 - rag.chains.indexing - INFO - 文档存储完成：3个chunk已存入向量库，集合名称：consistency_test
+2025-09-27 12:51:35,290 - server.rag_agent - INFO - 首次索引完成：3个文档片段存入向量库
+2025-09-27 12:51:35,586 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:51:35,617 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:51:36,149 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:51:36,156 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:51:36,286 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:51:36,286 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:51:36,288 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:51:36,516 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:51:36,527 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:51:37,150 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:51:37,152 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:53:19,198 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 12:53:19,314 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:53:19,315 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:53:19,317 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:53:19,329 - server.rag_agent - INFO - 正在执行首次索引：3个文件
+2025-09-27 12:53:19,332 - rag.chains.indexing - INFO - 成功加载3个文档（包含所有类型）
+2025-09-27 12:53:19,333 - rag.chains.indexing - INFO - 文档拆分完成：3个原始文档 → 3个chunk
+2025-09-27 12:53:19,937 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:53:20,138 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:53:20,327 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:53:20,449 - rag.chains.indexing - INFO - 文档存储完成：3个chunk已存入向量库，集合名称：consistency_test
+2025-09-27 12:53:20,451 - server.rag_agent - INFO - 首次索引完成：3个文档片段存入向量库
+2025-09-27 12:53:20,719 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:53:20,756 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:53:21,382 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:53:21,398 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:53:21,501 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:53:21,502 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:53:21,504 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:53:21,703 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:53:21,705 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:53:22,296 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:53:22,298 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:53:45,001 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 12:53:45,329 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:53:45,330 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:53:45,332 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:53:45,347 - server.rag_agent - INFO - 正在执行首次索引：3个文件
+2025-09-27 12:53:45,358 - rag.chains.indexing - INFO - 成功加载3个文档（包含所有类型）
+2025-09-27 12:53:45,365 - rag.chains.indexing - INFO - 文档拆分完成：3个原始文档 → 3个chunk
+2025-09-27 12:53:46,449 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:53:46,636 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:53:46,837 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:53:46,899 - rag.chains.indexing - INFO - 文档存储完成：3个chunk已存入向量库，集合名称：consistency_test
+2025-09-27 12:53:46,900 - server.rag_agent - INFO - 首次索引完成：3个文档片段存入向量库
+2025-09-27 12:53:47,179 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:53:47,323 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:53:47,880 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:53:47,886 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:53:47,957 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:53:47,957 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:53:47,958 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:53:48,158 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:53:48,162 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:53:48,762 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:53:48,764 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:54:27,641 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 12:54:27,732 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:54:27,732 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:54:27,734 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:54:27,742 - server.rag_agent - INFO - 正在执行首次索引：3个文件
+2025-09-27 12:54:27,745 - rag.chains.indexing - INFO - 成功加载3个文档（包含所有类型）
+2025-09-27 12:54:27,745 - rag.chains.indexing - INFO - 文档拆分完成：3个原始文档 → 3个chunk
+2025-09-27 12:54:28,280 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:54:28,504 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:54:28,700 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:54:28,797 - rag.chains.indexing - INFO - 文档存储完成：3个chunk已存入向量库，集合名称：consistency_test
+2025-09-27 12:54:28,797 - server.rag_agent - INFO - 首次索引完成：3个文档片段存入向量库
+2025-09-27 12:54:29,090 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:54:29,141 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:54:29,622 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:54:29,628 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:54:29,767 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:54:29,767 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:54:29,768 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:54:29,951 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:54:29,971 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:54:30,574 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:54:30,580 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:56:37,267 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 12:56:37,362 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:56:37,362 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:56:37,364 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:56:37,377 - server.rag_agent - INFO - 正在执行首次索引：3个文件
+2025-09-27 12:56:37,380 - rag.chains.indexing - INFO - 成功加载3个文档（包含所有类型）
+2025-09-27 12:56:37,384 - rag.chains.indexing - INFO - 文档拆分完成：3个原始文档 → 3个chunk
+2025-09-27 12:56:37,936 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:56:38,136 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:56:38,326 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:56:38,403 - rag.chains.indexing - INFO - 文档存储完成：3个chunk已存入向量库，集合名称：consistency_test
+2025-09-27 12:56:38,405 - server.rag_agent - INFO - 首次索引完成：3个文档片段存入向量库
+2025-09-27 12:56:38,710 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:56:38,740 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:56:39,219 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:56:39,226 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:56:39,350 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:56:39,350 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:56:39,352 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:56:39,558 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:56:39,561 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:56:40,028 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:56:40,050 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:57:05,196 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 12:57:05,284 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:57:05,285 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:57:05,287 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:57:05,307 - server.rag_agent - INFO - 正在执行首次索引：3个文件
+2025-09-27 12:57:05,313 - rag.chains.indexing - INFO - 成功加载3个文档（包含所有类型）
+2025-09-27 12:57:05,313 - rag.chains.indexing - INFO - 文档拆分完成：3个原始文档 → 3个chunk
+2025-09-27 12:57:05,825 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:57:06,029 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:57:06,238 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:57:06,298 - rag.chains.indexing - INFO - 文档存储完成：3个chunk已存入向量库，集合名称：consistency_test
+2025-09-27 12:57:06,298 - server.rag_agent - INFO - 首次索引完成：3个文档片段存入向量库
+2025-09-27 12:57:06,601 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:57:06,642 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:57:07,142 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:57:07,150 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:57:07,227 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:57:07,227 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:57:07,228 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:57:07,424 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:57:07,433 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:57:07,977 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:57:07,981 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:57:36,917 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 12:57:37,073 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:57:37,075 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:57:37,081 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:57:37,105 - server.rag_agent - INFO - 正在执行首次索引：3个文件
+2025-09-27 12:57:37,107 - rag.chains.indexing - INFO - 成功加载3个文档（包含所有类型）
+2025-09-27 12:57:37,108 - rag.chains.indexing - INFO - 文档拆分完成：3个原始文档 → 3个chunk
+2025-09-27 12:57:37,735 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:57:37,928 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:57:38,118 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:57:38,206 - rag.chains.indexing - INFO - 文档存储完成：3个chunk已存入向量库，集合名称：consistency_test
+2025-09-27 12:57:38,206 - server.rag_agent - INFO - 首次索引完成：3个文档片段存入向量库
+2025-09-27 12:57:38,522 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:57:38,574 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:57:39,172 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:57:39,183 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:57:39,259 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:57:39,260 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:57:39,260 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:57:39,462 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:57:39,465 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:57:39,956 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:57:39,960 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:58:57,894 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 12:58:57,995 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:58:57,996 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:58:57,998 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:58:58,008 - server.rag_agent - INFO - 正在执行首次索引：3个文件
+2025-09-27 12:58:58,010 - rag.chains.indexing - INFO - 成功加载3个文档（包含所有类型）
+2025-09-27 12:58:58,011 - rag.chains.indexing - INFO - 文档拆分完成：3个原始文档 → 3个chunk
+2025-09-27 12:58:58,543 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:58:58,739 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:58:58,966 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:58:59,063 - rag.chains.indexing - INFO - 文档存储完成：3个chunk已存入向量库，集合名称：consistency_test
+2025-09-27 12:58:59,063 - server.rag_agent - INFO - 首次索引完成：3个文档片段存入向量库
+2025-09-27 12:58:59,366 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:58:59,404 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:58:59,997 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:59:00,092 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:59:00,172 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:59:00,172 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:59:00,173 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:59:00,356 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:59:00,359 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:59:00,877 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:59:00,882 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 13:00:14,303 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 13:00:14,389 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 13:00:14,389 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 13:00:14,391 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 13:00:14,403 - server.rag_agent - INFO - 正在执行首次索引：3个文件
+2025-09-27 13:00:14,408 - rag.chains.indexing - INFO - 成功加载3个文档（包含所有类型）
+2025-09-27 13:00:14,413 - rag.chains.indexing - INFO - 文档拆分完成：3个原始文档 → 3个chunk
+2025-09-27 13:00:14,933 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:00:15,131 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:00:15,303 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:00:15,385 - rag.chains.indexing - INFO - 文档存储完成：3个chunk已存入向量库，集合名称：consistency_test
+2025-09-27 13:00:15,386 - server.rag_agent - INFO - 首次索引完成：3个文档片段存入向量库
+2025-09-27 13:00:15,733 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:00:15,763 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 13:00:16,219 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:00:16,225 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 13:00:16,304 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 13:00:16,304 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 13:00:16,306 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 13:00:16,509 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:00:16,512 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 13:00:17,007 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:00:17,009 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 13:01:39,337 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 13:01:39,430 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 13:01:39,430 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 13:01:39,432 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 13:01:39,448 - server.rag_agent - INFO - 正在执行首次索引：3个文件
+2025-09-27 13:01:39,452 - rag.chains.indexing - INFO - 成功加载3个文档（包含所有类型）
+2025-09-27 13:01:39,453 - rag.chains.indexing - INFO - 文档拆分完成：3个原始文档 → 3个chunk
+2025-09-27 13:01:40,002 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:01:40,238 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:01:40,439 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:01:40,534 - rag.chains.indexing - INFO - 文档存储完成：3个chunk已存入向量库，集合名称：consistency_test
+2025-09-27 13:01:40,535 - server.rag_agent - INFO - 首次索引完成：3个文档片段存入向量库
+2025-09-27 13:01:40,859 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:01:40,912 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 13:01:41,386 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:01:41,392 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 13:01:41,471 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 13:01:41,471 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 13:01:41,472 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 13:01:41,678 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:01:41,682 - server.rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 13:01:42,192 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:01:42,196 - server.rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 13:05:09,127 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 13:05:09,281 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 13:05:09,282 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 13:05:09,283 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 13:05:12,238 - rag_server - INFO - 正在处理您的问题...
+2025-09-27 13:05:12,239 - rag_agent - INFO - 正在执行首次索引：1个文件
+2025-09-27 13:05:12,240 - rag.chains.indexing - INFO - 成功加载1个文档（包含所有类型）
+2025-09-27 13:05:12,240 - rag.chains.indexing - INFO - 文档拆分完成：1个原始文档 → 2个chunk
+2025-09-27 13:05:12,785 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:05:13,041 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:05:13,104 - rag.chains.indexing - INFO - 文档存储完成：2个chunk已存入向量库，集合名称：interactive_rag_collection
+2025-09-27 13:05:13,105 - rag_agent - INFO - 首次索引完成：2个文档片段存入向量库
+2025-09-27 13:05:13,415 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:05:13,449 - rag_agent - INFO - 检索到 2 个相关文档片段
+2025-09-27 13:05:14,000 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:05:14,010 - rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 13:05:14,012 - rag_server - INFO - 对话完成 - 问题: 你好, 改写: 你好, 文档数: 2
+2025-09-27 13:05:21,681 - rag_server - INFO - 会话结束，正在清理资源...
+2025-09-27 13:05:21,690 - rag_server - INFO - 资源清理完成，再见！
+2025-09-27 13:11:31,212 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 13:11:31,369 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 13:11:31,369 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 13:11:31,371 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 13:11:36,792 - rag_server - INFO - 正在处理您的问题...
+2025-09-27 13:11:36,792 - rag_agent - INFO - 正在执行首次索引：1个文件
+2025-09-27 13:11:36,793 - rag.chains.indexing - INFO - 成功加载1个文档（包含所有类型）
+2025-09-27 13:11:36,793 - rag.chains.indexing - INFO - 文档拆分完成：1个原始文档 → 2个chunk
+2025-09-27 13:11:37,262 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:11:37,500 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:11:37,618 - rag.chains.indexing - INFO - 文档存储完成：2个chunk已存入向量库，集合名称：interactive_rag_collection
+2025-09-27 13:11:37,619 - rag_agent - INFO - 首次索引完成：2个文档片段存入向量库
+2025-09-27 13:11:37,960 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:11:37,991 - rag_agent - INFO - 检索到 2 个相关文档片段
+2025-09-27 13:11:38,601 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:11:38,609 - rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 13:11:38,610 - rag_server - INFO - 对话完成 - 问题: 你好, 改写: 你好, 文档数: 2
+2025-09-27 13:11:49,602 - rag_server - INFO - 正在处理您的问题...
+2025-09-27 13:11:50,138 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:11:50,144 - rag_agent - INFO - 问题改写：原始='langchain有哪些版本？' → 改写='LangChain有哪些版本？'
+2025-09-27 13:11:50,357 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:11:50,361 - rag_agent - INFO - 检索到 2 个相关文档片段
+2025-09-27 13:11:51,277 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:11:51,282 - rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 13:11:51,305 - rag_server - INFO - 对话完成 - 问题: langchain有哪些版本？, 改写: LangChain有哪些版本？, 文档数: 2
+2025-09-27 13:12:12,623 - rag_server - INFO - 会话结束，正在清理资源...
+2025-09-27 13:12:12,629 - rag_server - INFO - 资源清理完成，再见！
+2025-09-27 13:12:58,329 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 13:12:58,484 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 13:12:58,484 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 13:12:58,486 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 13:14:06,454 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 13:14:06,600 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 13:14:06,600 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 13:14:06,602 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 13:14:06,608 - rag_server - INFO - 正在处理您的问题...
+2025-09-27 13:14:06,608 - rag_agent - INFO - 正在执行首次索引：1个文件
+2025-09-27 13:14:06,609 - rag.chains.indexing - INFO - 成功加载1个文档（包含所有类型）
+2025-09-27 13:14:06,609 - rag.chains.indexing - INFO - 文档拆分完成：1个原始文档 → 2个chunk
+2025-09-27 13:14:07,131 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:14:07,367 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:14:07,446 - rag.chains.indexing - INFO - 文档存储完成：2个chunk已存入向量库，集合名称：interactive_rag_collection
+2025-09-27 13:14:07,447 - rag_agent - INFO - 首次索引完成：2个文档片段存入向量库
+2025-09-27 13:14:07,840 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:14:07,888 - rag_agent - INFO - 检索到 2 个相关文档片段
+2025-09-27 13:14:09,058 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:14:09,067 - rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 13:14:09,072 - rag_server - INFO - 对话完成 - 问题: langchain??????, 改写: langchain??????, 文档数: 2
+2025-09-27 13:14:09,077 - rag_server - INFO - 资源清理完成，再见！
+2025-09-27 13:14:45,151 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 13:14:45,407 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 13:14:45,408 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 13:14:45,410 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 13:14:48,584 - rag_server - INFO - 正在处理您的问题...
+2025-09-27 13:14:48,584 - rag_agent - INFO - 正在执行首次索引：1个文件
+2025-09-27 13:14:48,585 - rag.chains.indexing - INFO - 成功加载1个文档（包含所有类型）
+2025-09-27 13:14:48,585 - rag.chains.indexing - INFO - 文档拆分完成：1个原始文档 → 2个chunk
+2025-09-27 13:14:49,026 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:14:49,218 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:14:49,281 - rag.chains.indexing - INFO - 文档存储完成：2个chunk已存入向量库，集合名称：interactive_rag_collection
+2025-09-27 13:14:49,282 - rag_agent - INFO - 首次索引完成：2个文档片段存入向量库
+2025-09-27 13:14:49,616 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:14:49,653 - rag_agent - INFO - 检索到 2 个相关文档片段
+2025-09-27 13:14:50,209 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:14:50,231 - rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 13:14:50,237 - rag_server - INFO - 对话完成 - 问题: 你好, 改写: 你好, 文档数: 2
+2025-09-27 13:14:59,073 - rag_server - INFO - 正在处理您的问题...
+2025-09-27 13:14:59,589 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:14:59,593 - rag_agent - INFO - 问题改写：原始='langchain有哪些版本？' → 改写='LangChain有哪些版本？'
+2025-09-27 13:14:59,795 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:14:59,799 - rag_agent - INFO - 检索到 2 个相关文档片段
+2025-09-27 13:15:00,943 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:15:00,947 - rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 13:15:00,957 - rag_server - INFO - 对话完成 - 问题: langchain有哪些版本？, 改写: LangChain有哪些版本？, 文档数: 2
+2025-09-27 13:15:05,639 - rag_server - INFO - 正在处理您的问题...
+2025-09-27 13:15:06,176 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:15:06,185 - rag_agent - INFO - 问题改写：原始='你是谁？' → 改写='你是谁？'
+2025-09-27 13:15:06,386 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:15:06,390 - rag_agent - INFO - 检索到 2 个相关文档片段
+2025-09-27 13:15:07,072 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:15:07,076 - rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 13:15:07,077 - rag_server - INFO - 对话完成 - 问题: 你是谁？, 改写: 你是谁？, 文档数: 2
+2025-09-27 13:15:48,135 - rag_server - INFO - 正在处理您的问题...
+2025-09-27 13:15:48,865 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:15:48,870 - rag_agent - INFO - 问题改写：原始='langchai有哪些版本？' → 改写='LangChain有哪些版本？'
+2025-09-27 13:15:49,058 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:15:49,060 - rag_agent - INFO - 检索到 2 个相关文档片段
+2025-09-27 13:15:49,953 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:15:49,958 - rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 13:15:49,960 - rag_server - INFO - 对话完成 - 问题: langchai有哪些版本？, 改写: LangChain有哪些版本？, 文档数: 2
+2025-09-27 13:16:02,071 - rag_server - INFO - 正在处理您的问题...
+2025-09-27 13:16:02,752 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:16:02,760 - rag_agent - INFO - 问题改写：原始='刚才我们讨论了什么？' → 改写='刚才我们讨论了 LangChain 及其相关包的版本信息，包括 langchain、langchain_community、langchain_openai、langchain-chroma 和 langchainhub 的具体版本号。'
+2025-09-27 13:16:02,941 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:16:02,943 - rag_agent - INFO - 检索到 2 个相关文档片段
+2025-09-27 13:16:03,953 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:16:03,959 - rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 13:16:03,969 - rag_server - INFO - 对话完成 - 问题: 刚才我们讨论了什么？, 改写: 刚才我们讨论了 LangChain 及其相关包的版本信息，包括 langchain、langchain_community、langchain_openai、langchain-chroma 和 langchainhub 的具体版本号。, 文档数: 2
+2025-09-27 13:16:16,902 - rag_server - INFO - 会话结束，正在清理资源...
+2025-09-27 13:16:16,909 - rag_server - INFO - 资源清理完成，再见！
+2025-09-27 13:22:15,680 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 13:22:15,837 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 13:22:15,837 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 13:22:15,839 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 13:22:21,999 - rag_server - INFO - 正在处理您的问题...
+2025-09-27 13:22:22,000 - rag_agent - INFO - 正在执行首次索引：1个文件
+2025-09-27 13:22:22,000 - rag.chains.indexing - INFO - 成功加载1个文档（包含所有类型）
+2025-09-27 13:22:22,001 - rag.chains.indexing - INFO - 文档拆分完成：1个原始文档 → 2个chunk
+2025-09-27 13:22:22,466 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:22:22,664 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:22:22,872 - rag.chains.indexing - INFO - 文档存储完成：2个chunk已存入向量库，集合名称：interactive_rag_collection
+2025-09-27 13:22:22,875 - rag_agent - INFO - 首次索引完成：2个文档片段存入向量库
+2025-09-27 13:22:23,231 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:22:23,265 - rag_agent - INFO - 检索到 2 个相关文档片段
+2025-09-27 13:22:23,817 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:22:23,824 - rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 13:22:23,828 - rag_server - INFO - 对话完成 - 问题: 你好, 改写: 你好, 文档数: 2
+2025-09-27 13:22:31,368 - rag_server - INFO - 正在处理您的问题...
+2025-09-27 13:22:32,207 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:22:32,212 - rag_agent - INFO - 问题改写：原始='你是谁？' → 改写='你是谁？'
+2025-09-27 13:22:32,388 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 13:22:32,390 - rag_agent - INFO - 检索到 2 个相关文档片段
+2025-09-27 13:22:33,393 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 13:22:33,396 - rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 13:22:33,398 - rag_server - INFO - 对话完成 - 问题: 你是谁？, 改写: 你是谁？, 文档数: 2
+2025-09-27 13:22:45,367 - rag_server - INFO - 会话结束，正在清理资源...
+2025-09-27 13:22:45,374 - rag_server - INFO - 资源清理完成，再见！

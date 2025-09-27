@@ -1,7 +1,7 @@
 from typing import List, Optional, Dict, Any
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
-from rag.connector.embedding.ALIYUN import QwenEmbeddings
+from rag.connector.embedding.aliyun import QwenEmbeddings
 
 
 class ChromaVectorStore:
@@ -33,8 +33,8 @@ class ChromaVectorStore:
         
         try:
             doc_ids = self.chroma_client.add_documents(documents=documents)
-            if self.persist_directory:
-                self.chroma_client.persist()  
+            # 注意：新版本的langchain-chroma中，persist方法已被移除
+            # 当persist_directory被指定时，Chroma会自动持久化数据
             return doc_ids
         except Exception as e:
             raise RuntimeError(f"Chroma添加文档失败（集合：{self.collection_name}）: {str(e)}") from e

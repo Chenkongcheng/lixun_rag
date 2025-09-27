@@ -1,0 +1,77 @@
+2025-09-27 12:29:43,987 - langchain_community.utils.user_agent - WARNING - USER_AGENT environment variable not set, consider setting it to identify your requests.
+2025-09-27 12:29:44,010 - langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:29:44,011 - langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:29:44,024 - langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:29:44,060 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 12:29:44,169 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:29:44,170 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:29:44,171 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:29:44,908 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:29:44,950 - rag_agent - WARNING - 未检索到任何相关文档片段
+2025-09-27 12:29:44,958 - langsmith.client - ERROR - Error creating feedback
+Traceback (most recent call last):
+  File "D:\Python_practice\First4\RAG_lixun\server\rag_agent.py", line 210, in run
+    final_state = self.graph.invoke(initial_state, config=config)
+  File "D:\Python_practice\First4\RAG_lixun\.venv\lib\site-packages\langgraph\pregel\__init__.py", line 2719, in invoke
+    for chunk in self.stream(
+  File "D:\Python_practice\First4\RAG_lixun\.venv\lib\site-packages\langgraph\pregel\__init__.py", line 2436, in stream
+    for _ in runner.tick(
+  File "D:\Python_practice\First4\RAG_lixun\.venv\lib\site-packages\langgraph\pregel\runner.py", line 161, in tick
+    run_with_retry(
+  File "D:\Python_practice\First4\RAG_lixun\.venv\lib\site-packages\langgraph\pregel\retry.py", line 40, in run_with_retry
+    return task.proc.invoke(task.input, config)
+  File "D:\Python_practice\First4\RAG_lixun\.venv\lib\site-packages\langgraph\utils\runnable.py", line 623, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "D:\Python_practice\First4\RAG_lixun\.venv\lib\site-packages\langgraph\utils\runnable.py", line 377, in invoke
+    ret = self.func(*args, **kwargs)
+  File "D:\Python_practice\First4\RAG_lixun\server\rag_agent.py", line 110, in generation_node
+    raise ValueError("生成回答需要查询和检索文档")
+ValueError: 生成回答需要查询和检索文档
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python_practice\First4\RAG_lixun\.venv\lib\site-packages\langsmith\client.py", line 352, in _as_uuid
+    return uuid.UUID(value) if not isinstance(value, uuid.UUID) else value
+  File "C:\Users\24109\AppData\Roaming\uv\python\cpython-3.10.12-windows-x86_64-none\lib\uuid.py", line 177, in __init__
+    raise ValueError('badly formed hexadecimal UUID string')
+ValueError: badly formed hexadecimal UUID string
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python_practice\First4\RAG_lixun\.venv\lib\site-packages\langsmith\client.py", line 6283, in create_feedback
+    run_id=_ensure_uuid(run_id, accept_null=True),
+  File "D:\Python_practice\First4\RAG_lixun\.venv\lib\site-packages\langsmith\client.py", line 375, in _ensure_uuid
+    return _as_uuid(value)
+  File "D:\Python_practice\First4\RAG_lixun\.venv\lib\site-packages\langsmith\client.py", line 355, in _as_uuid
+    raise ls_utils.LangSmithUserError(
+langsmith.utils.LangSmithUserError: value must be a valid UUID or UUID string. Got unknown
+2025-09-27 12:31:28,296 - langchain_community.utils.user_agent - WARNING - USER_AGENT environment variable not set, consider setting it to identify your requests.
+2025-09-27 12:31:28,317 - langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:31:28,320 - langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:31:28,328 - langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:31:28,366 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 12:31:28,469 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:31:28,470 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:31:28,471 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:31:29,075 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:31:29,116 - rag_agent - WARNING - 未检索到任何相关文档片段
+2025-09-27 12:31:29,121 - rag_agent - WARNING - 未检索到文档，使用空文档生成回答
+2025-09-27 12:31:29,936 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:31:29,944 - rag_agent - INFO - LangSmith追踪ID: unknown
+2025-09-27 12:32:43,491 - langchain_community.utils.user_agent - WARNING - USER_AGENT environment variable not set, consider setting it to identify your requests.
+2025-09-27 12:32:43,549 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-09-27 12:32:43,649 - server.langsmith_setup - INFO - LANGSMITH_TRACING: True
+2025-09-27 12:32:43,649 - server.langsmith_setup - INFO - LANGSMITH_API_KEY 存在: True
+2025-09-27 12:32:43,652 - server.langsmith_setup - INFO - LangSmith追踪已启用 - 项目: lixun_rag
+2025-09-27 12:32:43,660 - rag_agent - INFO - 正在执行首次索引：1个文件
+2025-09-27 12:32:43,661 - rag.chains.indexing - INFO - 成功加载1个文档（包含所有类型）
+2025-09-27 12:32:43,663 - rag.chains.indexing - INFO - 文档拆分完成：1个原始文档 → 1个chunk
+2025-09-27 12:32:44,188 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:32:44,197 - rag.chains.indexing - INFO - 文档存储完成：1个chunk已存入向量库，集合名称：test_langsmith_with_docs
+2025-09-27 12:32:44,198 - rag_agent - INFO - 首次索引完成：1个文档片段存入向量库
+2025-09-27 12:32:44,505 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2025-09-27 12:32:44,562 - rag_agent - INFO - 检索到 1 个相关文档片段
+2025-09-27 12:32:45,171 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-27 12:32:45,183 - rag_agent - INFO - LangSmith追踪ID: unknown

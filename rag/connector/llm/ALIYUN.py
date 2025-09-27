@@ -6,10 +6,9 @@ from langchain_core.language_models import LLM
 from langchain_core.callbacks import CallbackManagerForLLMRun
 from langchain_core.outputs import GenerationChunk
 
-# 加载环境变量
+
 load_dotenv()
 
-# 提前读取环境变量，作为默认值备选
 DASHSCOPE_API_KEY_FROM_ENV = os.getenv("DASHSCOPE_API_KEY")
 ALIYUN_BASE_URL_FROM_ENV = os.getenv("ALIYUN_BASE_URL")
 MODEL_NAME_FROM_ENV = os.getenv("LLM_MODEL_NAME")

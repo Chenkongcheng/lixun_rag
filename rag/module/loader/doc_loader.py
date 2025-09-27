@@ -37,6 +37,7 @@ class CustomizedOcrDocLoader(UnstructuredFileLoader, BaseLoader):
 
             full_text = []
             
+            
             for para in doc.paragraphs:
                 if para.text.strip():  
                     full_text.append(para.text.strip())
@@ -77,7 +78,7 @@ class CustomizedOcrDocLoader(UnstructuredFileLoader, BaseLoader):
                     
                     combined_text = "\n\n".join(full_text)
                 except Exception as e:
-                    print(f"OCR处理失败: {e}")
+                    logger.error(f"Word文档加载失败,错误：{e}")
             
             # 使用unstructured处理文本
             if combined_text.strip():

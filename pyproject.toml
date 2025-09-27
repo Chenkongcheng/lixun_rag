@@ -20,4 +20,5 @@ dependencies = [
     "langgraph==0.4.8",
     "pydantic==2.11.9",
     "langchain-core==0.3.74",
+    "fastapi>=0.117.1",
 ]

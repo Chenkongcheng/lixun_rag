@@ -7,13 +7,16 @@ from langgraph.graph import StateGraph, END
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.messages import BaseMessage, HumanMessage, AIMessage
 from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import RunnableConfig
 from pydantic import BaseModel, Field
 from rag.chains.indexing import MultiTypeIndexingChain
 from rag.chains.retrieval import BasicRetrievalChain
 from rag.chains.generate import BasicGenerationChain
-from rag.connector.vectorstore.ChromaStore import ChromaVectorStore
-from rag.connector.llm.ALIYUN import QwenLLM
+from rag.connector.vectorstore.chroma_store import ChromaVectorStore
+from rag.connector.llm.aliyun import QwenLLM
 import logging
+from langsmith import Client
+from server.langsmith_setup import setup_langsmith
 
 # 配置日志
 logger = logging.getLogger(__name__)
@@ -30,13 +33,25 @@ class AgentState(BaseModel):
 
 
 class RAGAgent:
-    def __init__(self, collection_name: str = "rag_agent_collection"):
-        self.vector_store = ChromaVectorStore(collection_name=collection_name)
+    def __init__(self, collection_name: str = "rag_agent_collection", persist_directory: str = None):
+        # 如果没有指定持久化目录，使用环境变量VECTOR_DB_PATH
+        if persist_directory is None:
+            import os
+            persist_directory = os.getenv('VECTOR_DB_PATH', './data/chroma')
+        
+        self.vector_store = ChromaVectorStore(
+            collection_name=collection_name,
+            persist_directory=persist_directory
+        )
         self.indexing_chain = MultiTypeIndexingChain(vector_store=self.vector_store)
         self.retrieval_chain = BasicRetrievalChain(vector_store=self.vector_store)
         self.llm = QwenLLM(temperature=0.7)
         self.generation_chain = BasicGenerationChain(llm=self.llm)
         self.contextualize_chain = self._init_contextualize_chain()
+        
+        # 设置LangSmith追踪
+        self.tracer = setup_langsmith()
+        self.langsmith_client = Client() if self.tracer else None
         
         self.graph = self._build_graph()
 
@@ -99,8 +114,12 @@ class RAGAgent:
 
     def generation_node(self, state: AgentState) -> Dict[str, Any]:
         """生成回答：更新对话历史"""
-        if not state.reformulated_query or not state.documents:
-            raise ValueError("生成回答需要查询和检索文档")
+        if not state.reformulated_query:
+            raise ValueError("生成回答需要查询")
+        
+        # 如果没有检索到文档，使用空文档列表继续
+        if not state.documents:
+            logger.warning("未检索到文档，使用空文档生成回答")
         
         full_prompt = self.generation_chain.augment(
             query=state.reformulated_query,
@@ -155,7 +174,7 @@ just reformulate it if needed and otherwise return it as is."""
         file_paths: List[str] = None, 
         chat_history: List[Tuple[str, str]] = None
     ) -> Dict[str, Any]:
-        """对外接口：执行一次对话"""
+        """对外接口：执行一次对话（集成LangSmith追踪）"""
         # 转换历史对话格式（Tuple→BaseMessage）
         parsed_history = []
         if chat_history:
@@ -182,14 +201,51 @@ just reformulate it if needed and otherwise return it as is."""
             query=query,
             file_paths=file_paths or [],
             chat_history=parsed_history,
-            indexing_completed=indexing_completed,  # 索引已完成
+            indexing_completed=indexing_completed,
             documents=initial_documents
         )
 
-        # 执行流程
-        final_state = self.graph.invoke(initial_state)
+        # 创建LangSmith追踪配置
+        config = RunnableConfig(
+            callbacks=[self.tracer] if self.tracer else None,
+            tags=["rag-agent", "production"],
+            metadata={
+                "query": query,
+                "has_files": bool(file_paths),
+                "history_length": len(chat_history) if chat_history else 0,
+                "need_index": need_index
+            }
+        )
         
+        try:
+            # 执行流程（带追踪）
+            final_state = self.graph.invoke(initial_state, config=config)
+            
+            # 记录成功追踪
+            if self.langsmith_client and self.tracer:
+                run_id = getattr(self.tracer, 'run_id', 'unknown')
+                logger.info(f"LangSmith追踪ID: {run_id}")
+                
+        except Exception as e:
+            # 记录错误追踪
+            if self.langsmith_client and self.tracer:
+                try:
+                    run_id = getattr(self.tracer, 'run_id', None)
+                    if run_id and run_id != 'unknown':
+                        self.langsmith_client.create_feedback(
+                            run_id=run_id,
+                            key="error",
+                            score=0.0,
+                            comment=str(e)
+                        )
+                    else:
+                        logger.warning(f"无法记录错误追踪，run_id无效: {run_id}")
+                except Exception as feedback_error:
+                    logger.warning(f"记录错误追踪失败: {feedback_error}")
+            logger.error(f"RAG流程执行失败: {str(e)}")
+            raise
 
+        # 提取最终状态数据
         try:
             final_query = final_state.get("query", query) if hasattr(final_state, 'get') else getattr(final_state, "query", query)
         except:
@@ -242,6 +298,7 @@ just reformulate it if needed and otherwise return it as is."""
             "reformulated_query": final_reformulated_query,
             "answer": final_answer,
             "retrieved_doc_count": len(final_documents),
+            "retrieved_documents": final_documents,  
             "chat_history": formatted_history,
             "indexing_completed": final_indexing_completed
         }

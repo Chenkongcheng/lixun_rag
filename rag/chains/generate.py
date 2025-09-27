@@ -3,7 +3,7 @@ from langchain_core.documents import Document
 from langchain_core.prompts import PromptTemplate
 from langchain_core.messages import BaseMessage
 from rag.chains.base import BaseGenerationChain
-from rag.connector.llm.ALIYUN import QwenLLM
+from rag.connector.llm.aliyun import QwenLLM
 
 
 class BasicGenerationChain(BaseGenerationChain):
