@@ -15,7 +15,7 @@
 ```bash
 # 1. 克隆项目
 git clone https://github.com/Chenkongcheng/lixun_rag.git
-cd RAG_lixun
+cd lixun_rag
 
 # 2. 配置环境变量
 cp .env
