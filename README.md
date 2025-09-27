@@ -14,14 +14,21 @@
 
 ```bash
 # 1. 克隆项目
-git clone <项目地址>
-cd lixun_rag  # 进入项目目录
+git clone https://github.com/Chenkongcheng/lixun_rag.git
+cd RAG_lixun
 
 # 2. 配置环境变量
 cp .env
 # 编辑.env文件，配置您的API密钥
 
-# 3. 启动服务
+# 3.配置要解析的文档路径：在server/main.py下配置文档路径，支持多个文档同时解析
+INITIAL_FILES = [
+        "E:/requirements.txt",
+        "D:/TEST.pdf",
+        ....
+    ]
+
+# 4. 一键启动
 ./scripts/start.sh        # Linux/Mac
 scripts\start.bat         # Windows
 ```
@@ -116,10 +123,11 @@ LangSmith 是 LangChain 官方提供的可观测性平台，用于追踪、监�
 ## 🛠️ 技术栈
 
 ### 核心框架
+- **LangChain**: RAG流程编排框架
+- **LangGraph**: 智能体框架
+- **Chroma**: 向量数据库存储文档嵌入
+- **阿里通义千问**: 大语言模型提供问答能力
 
-- **LangChain**: RAG 流程编排框架
-- **LangGraph**: 工作流状态管理
-- **Chroma**: 向量数据库存储
 
 ### AI 服务
 

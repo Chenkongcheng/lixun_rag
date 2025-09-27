@@ -69,7 +69,7 @@ def main():
     
     # 配置需要解析的文档
     INITIAL_FILES = [
-        "E:/五，RAG项目实战企业篇/课件/fufan-chat-api-4.0.0/fufan-chat-api-4.0.0/requirements.txt",
+        "E:/requirements.txt",
     ]
     COLLECTION_NAME = "interactive_rag_collection"
 
