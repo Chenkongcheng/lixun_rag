@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  # 主应用服务
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DASHSCOPE_API_KEY=${DASHSCOPE_API_KEY}
+      - ALIYUN_BASE_URL=${ALIYUN_BASE_URL}
+      - LLM_MODEL_NAME=${LLM_MODEL_NAME}
+      - EMBEDDING_MODEL_NAME=${EMBEDDING_MODEL_NAME}
+      - LANGSMITH_TRACING=${LANGSMITH_TRACING}
+      - LANGSMITH_ENDPOINT=${LANGSMITH_ENDPOINT}
+      - LANGSMITH_API_KEY=${LANGSMITH_API_KEY}
+      - LANGSMITH_PROJECT=${LANGSMITH_PROJECT}
+      - VECTOR_DB_PATH=/app/data/chroma
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./documents:/app/documents
+    networks:
+      - rag_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  rag_network:
+    driver: bridge
+
+volumes:
+  chroma_data:
+    driver: local

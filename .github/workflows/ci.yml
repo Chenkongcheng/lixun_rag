@@ -1,0 +1,47 @@
+name: Lixun RAG CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Install uv
+      run: pip install uv
+      
+    - name: Install dependencies
+      run: uv pip install -e .
+      
+    - name: Run basic syntax check
+      run: |
+        python -m py_compile server/*.py
+        python -m py_compile rag/**/*.py
+        
+    - name: Run minimal tests
+      run: |
+        python -c "from rag.chains.base import BaseIndexingChain, BaseRetrievalChain, BaseGenerationChain; print('Base classes imported successfully')"
+        python -c "from rag.connector.embedding.aliyun import QwenEmbeddings; print('Embedding imported successfully')"
+        python -c "from rag.connector.llm.aliyun import QwenLLM; print('LLM imported successfully')"
+        
+    - name: Validate environment
+      run: |
+        python -c "
+import os
+assert 'DASHSCOPE_API_KEY' in os.environ or 'LANGSMITH_API_KEY' in os.environ, 'Missing required API keys'
+print('Environment validation passed')
+        "
+      env:
+        DASHSCOPE_API_KEY: ${{ secrets.DASHSCOPE_API_KEY }}
+        LANGSMITH_API_KEY: ${{ secrets.LANGSMITH_API_KEY }}
